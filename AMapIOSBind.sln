@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Foundation_Lib", "AMap_iOS_Foundation_Lib\AMap_iOS_Foundation_Lib.csproj", "{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_3DMap_Lib", "AMap_iOS_3DMap_Lib\AMap_iOS_3DMap_Lib.csproj", "{C4658457-F4B1-4574-9AA0-F681AF196E60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_2DMap_Lib", "AMap_iOS_2DMap_Lib\AMap_iOS_2DMap_Lib.csproj", "{89CFEBBE-5A4A-493F-9AD7-B91E57DEDF73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Search_Lib", "AMap_iOS_Search_Lib\AMap_iOS_Search_Lib.csproj", "{1023232A-49FC-4AF1-A801-F0EEB303CB45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4658457-F4B1-4574-9AA0-F681AF196E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4658457-F4B1-4574-9AA0-F681AF196E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4658457-F4B1-4574-9AA0-F681AF196E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4658457-F4B1-4574-9AA0-F681AF196E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CFEBBE-5A4A-493F-9AD7-B91E57DEDF73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CFEBBE-5A4A-493F-9AD7-B91E57DEDF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CFEBBE-5A4A-493F-9AD7-B91E57DEDF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CFEBBE-5A4A-493F-9AD7-B91E57DEDF73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1023232A-49FC-4AF1-A801-F0EEB303CB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1023232A-49FC-4AF1-A801-F0EEB303CB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1023232A-49FC-4AF1-A801-F0EEB303CB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1023232A-49FC-4AF1-A801-F0EEB303CB45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF8BA185-1398-4BD3-A258-F3F03F0C48A8}
+	EndGlobalSection
+EndGlobal
