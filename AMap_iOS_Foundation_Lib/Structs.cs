@@ -8,7 +8,7 @@ using ObjCRuntime;
 namespace AMapFoundationKit
 {
     [Native]
-    public enum AMapDrivingStrategy : uint
+    public enum AMapDrivingStrategy : long
     {
         Fastest = 0,
         MinFare = 1,
@@ -22,7 +22,7 @@ namespace AMapFoundationKit
     }
 
     [Native]
-    public enum AMapTransitStrategy : uint
+    public enum AMapTransitStrategy : long
     {
         Fastest = 0,
         MinFare = 1,
@@ -33,7 +33,7 @@ namespace AMapFoundationKit
     }
 
     [Native]
-    public enum AMapRouteSearchType : uint
+    public enum AMapRouteSearchType : long
     {
         Driving = 0,
         Transit = 1,
@@ -59,7 +59,7 @@ namespace AMapFoundationKit
     }
 
     [Native]
-    public enum AMapCoordinateType : uint
+    public enum AMapCoordinateType : long
     {
         AMap = -1,
         Baidu = 0,

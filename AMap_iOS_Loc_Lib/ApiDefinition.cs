@@ -224,11 +224,11 @@ namespace AMapLocationKit
 
         // @property (readonly, nonatomic) NSInteger count;
         [Export("count")]
-        uint Count { get; }
+        int Count { get; }
 
         // -(instancetype)initWithCoordinates:(CLLocationCoordinate2D *)coordinates count:(NSInteger)count identifier:(NSString *)identifier;
         [Export("initWithCoordinates:count:identifier:")]
-        unsafe IntPtr Constructor(CLLocationCoordinate2D* coordinates, uint count, string identifier);
+        unsafe IntPtr Constructor(CLLocationCoordinate2D* coordinates, int count, string identifier);
     }
 
     // typedef void (^AMapLocatingCompletionBlock)(CLLocation *, AMapLocationReGeocode *, NSError *);
@@ -263,11 +263,11 @@ namespace AMapLocationKit
 
         // @property (assign, nonatomic) NSInteger locationTimeout;
         [Export("locationTimeout")]
-        uint LocationTimeout { get; set; }
+        int LocationTimeout { get; set; }
 
         // @property (assign, nonatomic) NSInteger reGeocodeTimeout;
         [Export("reGeocodeTimeout")]
-        uint ReGeocodeTimeout { get; set; }
+        int ReGeocodeTimeout { get; set; }
 
         // @property (assign, nonatomic) BOOL locatingWithReGeocode;
         [Export("locatingWithReGeocode")]
@@ -430,7 +430,7 @@ namespace AMapLocationKit
 
         // @property (readonly, nonatomic) NSInteger count;
         [Export("count")]
-        uint Count { get; }
+        int Count { get; }
     }
 
     // @interface AMapGeoFencePOIRegion : AMapGeoFenceCircleRegion
@@ -488,15 +488,15 @@ namespace AMapLocationKit
 
         // -(void)addPolygonRegionForMonitoringWithCoordinates:(CLLocationCoordinate2D *)coordinates count:(NSInteger)count customID:(NSString *)customID;
         [Export("addPolygonRegionForMonitoringWithCoordinates:count:customID:")]
-        unsafe void AddPolygonRegionForMonitoringWithCoordinates(CLLocationCoordinate2D* coordinates, uint count, string customID);
+        unsafe void AddPolygonRegionForMonitoringWithCoordinates(CLLocationCoordinate2D* coordinates, int count, string customID);
 
         // -(void)addKeywordPOIRegionForMonitoringWithKeyword:(NSString *)keyword POIType:(NSString *)type city:(NSString *)city size:(NSInteger)size customID:(NSString *)customID;
         [Export("addKeywordPOIRegionForMonitoringWithKeyword:POIType:city:size:customID:")]
-        void AddKeywordPOIRegionForMonitoringWithKeyword(string keyword, string type, string city, uint size, string customID);
+        void AddKeywordPOIRegionForMonitoringWithKeyword(string keyword, string type, string city, int size, string customID);
 
         // -(void)addAroundPOIRegionForMonitoringWithLocationPoint:(CLLocationCoordinate2D)locationPoint aroundRadius:(NSInteger)aroundRadius keyword:(NSString *)keyword POIType:(NSString *)type size:(NSInteger)size customID:(NSString *)customID;
         [Export("addAroundPOIRegionForMonitoringWithLocationPoint:aroundRadius:keyword:POIType:size:customID:")]
-        void AddAroundPOIRegionForMonitoringWithLocationPoint(CLLocationCoordinate2D locationPoint, uint aroundRadius, string keyword, string type, uint size, string customID);
+        void AddAroundPOIRegionForMonitoringWithLocationPoint(CLLocationCoordinate2D locationPoint, int aroundRadius, string keyword, string type, int size, string customID);
 
         // -(void)addDistrictRegionForMonitoringWithDistrictName:(NSString *)districtName customID:(NSString *)customID;
         [Export("addDistrictRegionForMonitoringWithDistrictName:customID:")]
