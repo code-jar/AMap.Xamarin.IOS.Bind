@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Search_Lib", "AMap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Loc_Lib", "AMap_iOS_Loc_Lib\AMap_iOS_Loc_Lib.csproj", "{EAB36B98-75C0-4591-A50E-66E0EFE30484}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Foundation_Lib", "AMap_iOS_Foundation_Lib\AMap_iOS_Foundation_Lib.csproj", "{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{EAB36B98-75C0-4591-A50E-66E0EFE30484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAB36B98-75C0-4591-A50E-66E0EFE30484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAB36B98-75C0-4591-A50E-66E0EFE30484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
