@@ -7,7 +7,7 @@ using ObjCRuntime;
 namespace AMapLocationKit
 {
     [Native]
-    public enum AMapLocationErrorCode : nint
+    public enum AMapLocationErrorCode : uint
     {
         Unknown = 1,
         LocateFailed = 2,
@@ -23,7 +23,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapLocationRegionState : nint
+    public enum AMapLocationRegionState : uint
     {
         Unknow = 0,
         Inside = 1,
@@ -31,7 +31,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapLocationReGeocodeLanguage : nint
+    public enum AMapLocationReGeocodeLanguage : uint
     {
         Default = 0,
         Chinse = 1,
@@ -39,7 +39,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapLocationCoordinateType : nuint
+    public enum AMapLocationCoordinateType : uint
     {
         Baidu = 0,
         MapBar,
@@ -64,7 +64,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapGeoFenceRegionStatus : nint
+    public enum AMapGeoFenceRegionStatus : uint
     {
         Unknown = 0,
         Inside = 1,
@@ -73,7 +73,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapGeoFenceRegionType : nint
+    public enum AMapGeoFenceRegionType : uint
     {
         Circle = 0,
         Polygon = 1,
@@ -82,7 +82,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapGeoFenceActiveAction : nuint
+    public enum AMapGeoFenceActiveAction : uint
     {
         None = 0,
         Inside = 1 << 0,
@@ -91,7 +91,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapGeoFenceRegionActiveStatus : nuint
+    public enum AMapGeoFenceRegionActiveStatus : uint
     {
         UNMonitor = 0,
         Monitoring = 1 << 0,
@@ -99,7 +99,7 @@ namespace AMapLocationKit
     }
 
     [Native]
-    public enum AMapGeoFenceErrorCode : nint
+    public enum AMapGeoFenceErrorCode : uint
     {
         rUnknown = 1,
         rInvalidParameter = 2,
