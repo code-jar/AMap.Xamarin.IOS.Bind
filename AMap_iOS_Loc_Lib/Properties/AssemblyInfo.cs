@@ -12,11 +12,11 @@ using Foundation;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle("AMap_iOS_Loc_Lib")]
+[assembly: AssemblyTitle("AMapLocationKit")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AMap_iOS_Loc_Lib")]
+[assembly: AssemblyProduct("AMapLocationKit")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
