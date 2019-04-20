@@ -36,9 +36,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <ObjcBindingNativeLibrary Include="MAMapKit.a" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MAMapKit.linkwith.cs">
+      <DependentUpon>MAMapKit.a</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +49,69 @@
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin_lift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin_lift%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin_lift%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\pin_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\pin_shadow%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\pin_shadow%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin_lift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin_lift%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin_lift%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin_lift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin_lift%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin_lift%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>

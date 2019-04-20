@@ -220,7 +220,7 @@ namespace AMapLocationKit
     {
         // @property (readonly, nonatomic) CLLocationCoordinate2D * coordinates;
         [Export("coordinates")]
-        unsafe CLLocationCoordinate2D* Coordinates { get; }
+        unsafe CLLocationCoordinate2D Coordinates { get; }
 
         // @property (readonly, nonatomic) NSInteger count;
         [Export("count")]
@@ -228,7 +228,7 @@ namespace AMapLocationKit
 
         // -(instancetype)initWithCoordinates:(CLLocationCoordinate2D *)coordinates count:(NSInteger)count identifier:(NSString *)identifier;
         [Export("initWithCoordinates:count:identifier:")]
-        unsafe IntPtr Constructor(CLLocationCoordinate2D* coordinates, int count, string identifier);
+        unsafe IntPtr Constructor(CLLocationCoordinate2D coordinates, int count, string identifier);
     }
 
     // typedef void (^AMapLocatingCompletionBlock)(CLLocation *, AMapLocationReGeocode *, NSError *);
@@ -288,7 +288,7 @@ namespace AMapLocationKit
         // +(BOOL)headingAvailable;
         [Static]
         [Export("headingAvailable")]
-        [Verify(MethodToProperty)]
+        //[Verify(MethodToProperty)]
         bool HeadingAvailable { get; }
 
         // -(void)startUpdatingHeading;
@@ -367,11 +367,11 @@ namespace AMapLocationKit
 
         // @optional -(void)amapLocationManager:(AMapLocationManager *)manager didEnterRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
         [Export("amapLocationManager:didEnterRegion:")]
-        void AmapLocationManager(AMapLocationManager manager, AMapLocationRegion region);
+        void AmapLocationManagerDidEnterRegion(AMapLocationManager manager, AMapLocationRegion region);
 
         // @optional -(void)amapLocationManager:(AMapLocationManager *)manager didExitRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
         [Export("amapLocationManager:didExitRegion:")]
-        void AmapLocationManager(AMapLocationManager manager, AMapLocationRegion region);
+        void AmapLocationManagerDidExitRegion(AMapLocationManager manager, AMapLocationRegion region);
 
         // @optional -(void)amapLocationManager:(AMapLocationManager *)manager didDetermineState:(AMapLocationRegionState)state forRegion:(AMapLocationRegion *)region __attribute__((deprecated("请使用AMapGeoFenceManager")));
         [Export("amapLocationManager:didDetermineState:forRegion:")]
@@ -426,7 +426,7 @@ namespace AMapLocationKit
     {
         // @property (readonly, nonatomic) CLLocationCoordinate2D * coordinates;
         [Export("coordinates")]
-        unsafe CLLocationCoordinate2D* Coordinates { get; }
+        unsafe CLLocationCoordinate2D Coordinates { get; }
 
         // @property (readonly, nonatomic) NSInteger count;
         [Export("count")]
@@ -488,7 +488,7 @@ namespace AMapLocationKit
 
         // -(void)addPolygonRegionForMonitoringWithCoordinates:(CLLocationCoordinate2D *)coordinates count:(NSInteger)count customID:(NSString *)customID;
         [Export("addPolygonRegionForMonitoringWithCoordinates:count:customID:")]
-        unsafe void AddPolygonRegionForMonitoringWithCoordinates(CLLocationCoordinate2D* coordinates, int count, string customID);
+        unsafe void AddPolygonRegionForMonitoringWithCoordinates(CLLocationCoordinate2D coordinates, int count, string customID);
 
         // -(void)addKeywordPOIRegionForMonitoringWithKeyword:(NSString *)keyword POIType:(NSString *)type city:(NSString *)city size:(NSInteger)size customID:(NSString *)customID;
         [Export("addKeywordPOIRegionForMonitoringWithKeyword:POIType:city:size:customID:")]

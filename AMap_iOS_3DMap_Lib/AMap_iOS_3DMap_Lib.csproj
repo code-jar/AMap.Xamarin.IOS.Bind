@@ -36,9 +36,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <ObjcBindingNativeLibrary Include="MAMapKit.a" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MAMapKit.linkwith.cs">
+      <DependentUpon>MAMapKit.a</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +49,411 @@
   </ItemGroup>
   <ItemGroup>
     <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\GNaviConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\res.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\3d_navi_sky_day.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\3d_sky_day.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\3d_sky_night.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\3dlandscape.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\3dportrait.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\bktile.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\bktile_n.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\building.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\config_1_14_1510107091.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\config_2_14_1510107001.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\crossing_day_bk.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\crossing_nigth_bk.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\dash.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\dash_cd.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\dash_tq.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\gconfig_1_14_1484563173.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_1_14_1517312363.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_10_14_1510107265.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_2_14_1517312372.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_23_14_1514285400.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_24_14_1510107285.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_25_14_1510054937.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_27_14_1517312468.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_3_14_1517312381.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_35_14_1521026482.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_4_14_1510107228.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_5_14_1517312288.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_5_14_for_custom.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_50_14_1501055190.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_6_14_1510107235.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_7_14_1510107241.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\icons_8_14_1517312432.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\lineround.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\roadarrow.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\search_scenic_icon.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_0_14_1520856789.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_0_14_1527582292_for_custom.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_1_14_1520908388.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_10_14_1510107620.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_100_14_1521026633.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_3_14_1517301966.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_4_14_1520827092.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_5_14_1517301920.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_50_14_1501671321.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\style_6_14_1517302037.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\styleiconslist.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tbl.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tbl_l.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tbl_n.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tgl.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tgl_l.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tgl_n.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tmc_allinone.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tmc_l_allinone.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tmc_n_allinone.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tnl.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tnl_l.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tnl_n.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\trl.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\trl_l.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\trl_n.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tyl.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tyl_l.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\tyl_n.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\waterline.data" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\1015.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\1016.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\exit_label_bk_main_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\exit_label_bk_secondary_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\grass_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\grass_night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\road_bottom_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\road_bottom_night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\roadbk_main_day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\AMap3D.bundle\VM3DRes\roadbk_main_night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\arrow_line_3d_inner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\arrow_line_3d_outer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\arrow_line_3d_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\arrow_line_inner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\arrow_line_outer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\calloutArrowMask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\calloutArrowMask%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin_lift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin_lift%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\greenPin_lift%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\lineDashTexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\lineDashTextureDot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\lineDashTextureThin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\lineTexture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\lineTextureThin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\marker_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\marker_blue%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_clear%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_down%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_shouqi%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_shouqi_2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_sousuo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_zhankai%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\offline_zhankai_2%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\particle_fog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\particle_haze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\particle_rain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\particle_snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\particle_sun_0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\particle_sun_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\pin_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\pin_shadow%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\pin_shadow%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin_lift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin_lift%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\purplePin_lift%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin_lift.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin_lift%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\redPin_lift%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\select_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\select_%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\select_%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\traffic_texture_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\traffic_texture_darkred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\traffic_texture_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\traffic_texture_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\traffic_texture_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\images\traffic_texture_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\AMap.bundle\offline\offlinePackage.plist" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
