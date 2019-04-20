@@ -36,11 +36,8 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ObjcBindingNativeLibrary Include="MAMapKit.a" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="MAMapKit.linkwith.cs">
-      <DependentUpon>MAMapKit.a</DependentUpon>
+    <Compile Include="AMapFoundationKit.linkwith.cs">
+      <DependentUpon>AMapFoundationKit.a</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -454,6 +451,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\AMap.bundle\offline\offlinePackage.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="AMapFoundationKit.a" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
 </Project>
