@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Loc_Lib", "AMap_iO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMap_iOS_Foundation_Lib", "AMap_iOS_Foundation_Lib\AMap_iOS_Foundation_Lib.csproj", "{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SDK", "SDK", "{D2EC4339-B027-46F7-8B10-CDD8C14308CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4658457-F4B1-4574-9AA0-F681AF196E60} = {D2EC4339-B027-46F7-8B10-CDD8C14308CE}
+		{89CFEBBE-5A4A-493F-9AD7-B91E57DEDF73} = {D2EC4339-B027-46F7-8B10-CDD8C14308CE}
+		{1023232A-49FC-4AF1-A801-F0EEB303CB45} = {D2EC4339-B027-46F7-8B10-CDD8C14308CE}
+		{EAB36B98-75C0-4591-A50E-66E0EFE30484} = {D2EC4339-B027-46F7-8B10-CDD8C14308CE}
+		{0DBD983F-BD8F-4BD6-B08A-AD28457D35EF} = {D2EC4339-B027-46F7-8B10-CDD8C14308CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FF8BA185-1398-4BD3-A258-F3F03F0C48A8}
