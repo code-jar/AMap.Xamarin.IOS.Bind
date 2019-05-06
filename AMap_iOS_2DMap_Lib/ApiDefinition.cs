@@ -5,21 +5,27 @@ using Foundation;
 using MAMapKit;
 using ObjCRuntime;
 using UIKit;
+using MAMapKit;
 
 namespace MAMapKit
 {
-    [Static]
+    //[Static]
     //[Verify(ConstantsInterfaceAssociation)]
     partial interface Constants
     {
-        // extern int NSString;
-        [Field("NSString", "__Internal")]
-        int NSString { get; }
+        // extern NSString *const MAMapKitVersion;
+        [Field("MAMapKitVersion", "__Internal")]
+        NSString MAMapKitVersion { get; }
 
-        // extern int NSString;
-        [Field("NSString", "__Internal")]
-        int NSString { get; }
+        // extern NSString *const MAMapKitName;
+        [Field("MAMapKitName", "__Internal")]
+        NSString MAMapKitName { get; }
+    }
 
+    //[Static]
+    //[Verify(ConstantsInterfaceAssociation)]
+    partial interface Constants
+    {
         // extern const MAMapSize MAMapSizeWorld;
         [Field("MAMapSizeWorld", "__Internal")]
         MAMapSize MAMapSizeWorld { get; }
@@ -37,52 +43,28 @@ namespace MAMapKit
         MAMapRect MAMapRectZero { get; }
     }
 
-    //[Static]
-    //[Verify(ConstantsInterfaceAssociation)]
-    //partial interface Constants
-    //{
-    //    // extern const MAMapSize MAMapSizeWorld;
-    //    [Field("MAMapSizeWorld", "__Internal")]
-    //    MAMapSize MAMapSizeWorld { get; }
-
-    //    // extern const MAMapRect MAMapRectWorld;
-    //    [Field("MAMapRectWorld", "__Internal")]
-    //    MAMapRect MAMapRectWorld { get; }
-
-    //    // extern const MAMapRect MAMapRectNull;
-    //    [Field("MAMapRectNull", "__Internal")]
-    //    MAMapRect MAMapRectNull { get; }
-
-    //    // extern const MAMapRect MAMapRectZero;
-    //    [Field("MAMapRectZero", "__Internal")]
-    //    MAMapRect MAMapRectZero { get; }
-    //}
-
-    // typedef void (^AMapTileProjectionBlock)(int, int, int, int, int, int);
-    delegate void AMapTileProjectionBlock(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
-
     // @interface NSValueMAGeometryExtensions (NSValue)
     [Category]
     [BaseType(typeof(NSValue))]
     interface NSValue_NSValueMAGeometryExtensions
     {
         // +(NSValue *)valueWithMAMapPoint:(MAMapPoint)mapPoint;
-        [Static]
+        //[Static]
         [Export("valueWithMAMapPoint:")]
         NSValue ValueWithMAMapPoint(MAMapPoint mapPoint);
 
         // +(NSValue *)valueWithMAMapSize:(MAMapSize)mapSize;
-        [Static]
+        //[Static]
         [Export("valueWithMAMapSize:")]
         NSValue ValueWithMAMapSize(MAMapSize mapSize);
 
         // +(NSValue *)valueWithMAMapRect:(MAMapRect)mapRect;
-        [Static]
+        //[Static]
         [Export("valueWithMAMapRect:")]
         NSValue ValueWithMAMapRect(MAMapRect mapRect);
 
         // +(NSValue *)valueWithMACoordinate:(CLLocationCoordinate2D)coordinate;
-        [Static]
+        //[Static]
         [Export("valueWithMACoordinate:")]
         NSValue ValueWithMACoordinate(CLLocationCoordinate2D coordinate);
 
@@ -132,7 +114,7 @@ namespace MAMapKit
 
     // @protocol MAOverlay <MAAnnotation>
     [Protocol, Model]
-    interface MAOverlay : IMAAnnotation
+    interface MAOverlay //: MAAnnotation
     {
         // @required @property (readonly, nonatomic) CLLocationCoordinate2D coordinate;
         [Abstract]
@@ -187,11 +169,11 @@ namespace MAMapKit
 
         // -(BOOL)canDrawMapRect:(MAMapRect)mapRect zoomScale:(MAZoomScale)zoomScale;
         [Export("canDrawMapRect:zoomScale:")]
-        bool CanDrawMapRect(MAMapRect mapRect, double zoomScale);
+        bool CanDrawMapRectZoomScale(MAMapRect mapRect, double zoomScale);
 
         // -(void)drawMapRect:(MAMapRect)mapRect zoomScale:(MAZoomScale)zoomScale inContext:(CGContextRef)context;
         [Export("drawMapRect:zoomScale:inContext:")]
-        unsafe void DrawMapRect(MAMapRect mapRect, double zoomScale, CGContextRef context);
+        unsafe void DrawMapRectZoomScaleInContext(MAMapRect mapRect, double zoomScale, CGContext context);
 
         // -(void)setNeedsDisplay;
         [Export("setNeedsDisplay")]
@@ -203,7 +185,7 @@ namespace MAMapKit
 
         // -(void)setNeedsDisplayInMapRect:(MAMapRect)mapRect zoomScale:(MAZoomScale)zoomScale;
         [Export("setNeedsDisplayInMapRect:zoomScale:")]
-        void SetNeedsDisplayInMapRect(MAMapRect mapRect, double zoomScale);
+        void SetNeedsDisplayInMapRectZoomScale(MAMapRect mapRect, double zoomScale);
     }
 
     // @interface MAAnnotationView : UIView
@@ -276,11 +258,11 @@ namespace MAMapKit
 
         // -(void)setSelected:(BOOL)selected animated:(BOOL)animated;
         [Export("setSelected:animated:")]
-        void SetSelected(bool selected, bool animated);
+        void SetSelectedAnimated(bool selected, bool animated);
 
         // -(void)setDragState:(MAAnnotationViewDragState)newDragState animated:(BOOL)animated;
         [Export("setDragState:animated:")]
-        void SetDragState(MAAnnotationViewDragState newDragState, bool animated);
+        void SetDragStateAnimated(MAAnnotationViewDragState newDragState, bool animated);
     }
 
     // @interface MAOverlayView : UIView
@@ -317,7 +299,7 @@ namespace MAMapKit
 
         // -(void)drawMapRect:(MAMapRect)mapRect zoomScale:(MAZoomScale)zoomScale inContext:(CGContextRef)context;
         [Export("drawMapRect:zoomScale:inContext:")]
-        unsafe void DrawMapRect(MAMapRect mapRect, double zoomScale, CGContextRef context);
+        unsafe void DrawMapRectZoomScaleInContext(MAMapRect mapRect, double zoomScale, CGContext context);
 
         // -(void)setNeedsDisplay;
         [Export("setNeedsDisplay")]
@@ -329,7 +311,7 @@ namespace MAMapKit
 
         // -(void)setNeedsDisplayInMapRect:(MAMapRect)mapRect zoomScale:(MAZoomScale)zoomScale;
         [Export("setNeedsDisplayInMapRect:zoomScale:")]
-        void SetNeedsDisplayInMapRect(MAMapRect mapRect, double zoomScale);
+        void SetNeedsDisplayInMapRectZoomScale(MAMapRect mapRect, double zoomScale);
 
         // @property CGFloat alpha;
         [Export("alpha")]
@@ -492,11 +474,11 @@ namespace MAMapKit
 
         // -(void)setCenterCoordinate:(CLLocationCoordinate2D)centerCoordinate animated:(BOOL)animated;
         [Export("setCenterCoordinate:animated:")]
-        void SetCenterCoordinate(CLLocationCoordinate2D centerCoordinate, bool animated);
+        void SetCenterCoordinateAnimated(CLLocationCoordinate2D centerCoordinate, bool animated);
 
         // -(void)setRegion:(MACoordinateRegion)region animated:(BOOL)animated;
         [Export("setRegion:animated:")]
-        void SetRegion(MACoordinateRegion region, bool animated);
+        void SetRegionAnimated(MACoordinateRegion region, bool animated);
 
         // -(MACoordinateRegion)regionThatFits:(MACoordinateRegion)region;
         [Export("regionThatFits:")]
@@ -504,11 +486,11 @@ namespace MAMapKit
 
         // -(void)setVisibleMapRect:(MAMapRect)mapRect animated:(BOOL)animated;
         [Export("setVisibleMapRect:animated:")]
-        void SetVisibleMapRect(MAMapRect mapRect, bool animated);
+        void SetVisibleMapRectAnimated(MAMapRect mapRect, bool animated);
 
         // -(void)setVisibleMapRect:(MAMapRect)mapRect edgePadding:(UIEdgeInsets)insets animated:(BOOL)animated;
         [Export("setVisibleMapRect:edgePadding:animated:")]
-        void SetVisibleMapRect(MAMapRect mapRect, UIEdgeInsets insets, bool animated);
+        void SetVisibleMapRectEdgePaddingAnimated(MAMapRect mapRect, UIEdgeInsets insets, bool animated);
 
         // -(MAMapRect)mapRectThatFits:(MAMapRect)mapRect;
         [Export("mapRectThatFits:")]
@@ -516,35 +498,35 @@ namespace MAMapKit
 
         // -(MAMapRect)mapRectThatFits:(MAMapRect)mapRect edgePadding:(UIEdgeInsets)insets;
         [Export("mapRectThatFits:edgePadding:")]
-        MAMapRect MapRectThatFits(MAMapRect mapRect, UIEdgeInsets insets);
+        MAMapRect MapRectThatFitsEdgePadding(MAMapRect mapRect, UIEdgeInsets insets);
 
         // -(void)setZoomLevel:(double)newZoomLevel animated:(BOOL)animated;
         [Export("setZoomLevel:animated:")]
-        void SetZoomLevel(double newZoomLevel, bool animated);
+        void SetZoomLevelAnimated(double newZoomLevel, bool animated);
 
         // -(void)setZoomLevel:(double)newZoomLevel atPivot:(CGPoint)pivot animated:(BOOL)animated;
         [Export("setZoomLevel:atPivot:animated:")]
-        void SetZoomLevel(double newZoomLevel, CGPoint pivot, bool animated);
+        void SetZoomLevelAtPivotAnimated(double newZoomLevel, CGPoint pivot, bool animated);
 
         // -(CGPoint)convertCoordinate:(CLLocationCoordinate2D)coordinate toPointToView:(UIView *)view;
         [Export("convertCoordinate:toPointToView:")]
-        CGPoint ConvertCoordinate(CLLocationCoordinate2D coordinate, UIView view);
+        CGPoint ConvertCoordinateToPointToView(CLLocationCoordinate2D coordinate, UIView view);
 
         // -(CLLocationCoordinate2D)convertPoint:(CGPoint)point toCoordinateFromView:(UIView *)view;
         [Export("convertPoint:toCoordinateFromView:")]
-        CLLocationCoordinate2D ConvertPoint(CGPoint point, UIView view);
+        CLLocationCoordinate2D ConvertPointToCoordinateFromView(CGPoint point, UIView view);
 
         // -(CGRect)convertRegion:(MACoordinateRegion)region toRectToView:(UIView *)view;
         [Export("convertRegion:toRectToView:")]
-        CGRect ConvertRegion(MACoordinateRegion region, UIView view);
+        CGRect ConvertRegionToRectToView(MACoordinateRegion region, UIView view);
 
         // -(MACoordinateRegion)convertRect:(CGRect)rect toRegionFromView:(UIView *)view;
         [Export("convertRect:toRegionFromView:")]
-        MACoordinateRegion ConvertRect(CGRect rect, UIView view);
+        MACoordinateRegion ConvertRectToRegionFromView(CGRect rect, UIView view);
 
         // -(void)setUserTrackingMode:(MAUserTrackingMode)mode animated:(BOOL)animated;
         [Export("setUserTrackingMode:animated:")]
-        void SetUserTrackingMode(MAUserTrackingMode mode, bool animated);
+        void SetUserTrackingModeAnimated(MAUserTrackingMode mode, bool animated);
 
         // -(void)updateUserLocationRepresentation:(MAUserLocationRepresentation *)representation;
         [Export("updateUserLocationRepresentation:")]
@@ -578,11 +560,11 @@ namespace MAMapKit
 
         // -(void)selectAnnotation:(id<MAAnnotation>)annotation animated:(BOOL)animated;
         [Export("selectAnnotation:animated:")]
-        void SelectAnnotation(MAAnnotation annotation, bool animated);
+        void SelectAnnotationAnimated(MAAnnotation annotation, bool animated);
 
         // -(void)deselectAnnotation:(id<MAAnnotation>)annotation animated:(BOOL)animated;
         [Export("deselectAnnotation:animated:")]
-        void DeselectAnnotation(MAAnnotation annotation, bool animated);
+        void DeselectAnnotationAnimated(MAAnnotation annotation, bool animated);
 
         // -(NSSet *)annotationsInMapRect:(MAMapRect)mapRect;
         [Export("annotationsInMapRect:")]
@@ -591,12 +573,12 @@ namespace MAMapKit
         // -(void)showAnnotations:(NSArray *)annotations animated:(BOOL)animated;
         [Export("showAnnotations:animated:")]
         //[Verify(StronglyTypedNSArray)]
-        void ShowAnnotations(NSObject[] annotations, bool animated);
+        void ShowAnnotationsAnimated(NSObject[] annotations, bool animated);
 
         // -(void)showAnnotations:(NSArray *)annotations edgePadding:(UIEdgeInsets)insets animated:(BOOL)animated;
         [Export("showAnnotations:edgePadding:animated:")]
         //[Verify(StronglyTypedNSArray)]
-        void ShowAnnotations(NSObject[] annotations, UIEdgeInsets insets, bool animated);
+        void ShowAnnotationsEdgePaddingAnimated(NSObject[] annotations, UIEdgeInsets insets, bool animated);
 
         // -(MAOverlayRenderer *)rendererForOverlay:(id<MAOverlay>)overlay;
         [Export("rendererForOverlay:")]
@@ -626,29 +608,29 @@ namespace MAMapKit
 
         // -(void)insertOverlay:(id<MAOverlay>)overlay atIndex:(NSUInteger)index;
         [Export("insertOverlay:atIndex:")]
-        void InsertOverlay(MAOverlay overlay, nuint index);
+        void InsertOverlayAtIndex(MAOverlay overlay, int index);
 
         // -(void)exchangeOverlayAtIndex:(NSUInteger)index1 withOverlayAtIndex:(NSUInteger)index2;
         [Export("exchangeOverlayAtIndex:withOverlayAtIndex:")]
-        void ExchangeOverlayAtIndex(nuint index1, nuint index2);
+        void ExchangeOverlayAtIndexWithOverlayAtIndex(nuint index1, int index2);
 
         // -(void)insertOverlay:(id<MAOverlay>)overlay aboveOverlay:(id<MAOverlay>)sibling;
         [Export("insertOverlay:aboveOverlay:")]
-        void InsertOverlay(MAOverlay overlay, MAOverlay sibling);
+        void InsertOverlayAboveOverlay(MAOverlay overlay, MAOverlay sibling);
 
         // -(void)insertOverlay:(id<MAOverlay>)overlay belowOverlay:(id<MAOverlay>)sibling;
         [Export("insertOverlay:belowOverlay:")]
-        void InsertOverlay(MAOverlay overlay, MAOverlay sibling);
+        void InsertOverlayBelowOverlay(MAOverlay overlay, MAOverlay sibling);
 
         // -(void)showOverlays:(NSArray *)overlays animated:(BOOL)animated;
         [Export("showOverlays:animated:")]
         //[Verify(StronglyTypedNSArray)]
-        void ShowOverlays(NSObject[] overlays, bool animated);
+        void ShowOverlaysAnimated(NSObject[] overlays, bool animated);
 
         // -(void)showOverlays:(NSArray *)overlays edgePadding:(UIEdgeInsets)insets animated:(BOOL)animated;
         [Export("showOverlays:edgePadding:animated:")]
         //[Verify(StronglyTypedNSArray)]
-        void ShowOverlays(NSObject[] overlays, UIEdgeInsets insets, bool animated);
+        void ShowOverlaysEdgePaddingAnimated(NSObject[] overlays, UIEdgeInsets insets, bool animated);
 
         // -(void)clearDisk;
         [Export("clearDisk")]
@@ -666,7 +648,7 @@ namespace MAMapKit
 
         // -(void)takeSnapshotInRect:(CGRect)rect withCompletionBlock:(void (^)(UIImage *, CGRect))block;
         [Export("takeSnapshotInRect:withCompletionBlock:")]
-        void TakeSnapshotInRect(CGRect rect, Action<UIImage, CGRect> block);
+        void TakeSnapshotInRectWithCompletionBlock(CGRect rect, Action<UIImage, CGRect> block);
     }
 
     // @interface LocationOption (MAMapView)
@@ -702,60 +684,60 @@ namespace MAMapKit
     {
         // @optional -(void)mapView:(MAMapView *)mapView regionWillChangeAnimated:(BOOL)animated;
         [Export("mapView:regionWillChangeAnimated:")]
-        void MapView(MAMapView mapView, bool animated);
+        void MapViewRegionWillChangeAnimated(MAMapView mapView, bool animated);
 
         // @optional -(void)mapView:(MAMapView *)mapView regionDidChangeAnimated:(BOOL)animated;
         [Export("mapView:regionDidChangeAnimated:")]
-        void MapView(MAMapView mapView, bool animated);
+        void MapViewRegionDidChangeAnimated(MAMapView mapView, bool animated);
 
         // @optional -(void)mapView:(MAMapView *)mapView mapWillMoveByUser:(BOOL)wasUserAction;
         [Export("mapView:mapWillMoveByUser:")]
-        void MapView(MAMapView mapView, bool wasUserAction);
+        void MapViewMapWillMoveByUser(MAMapView mapView, bool wasUserAction);
 
         // @optional -(void)mapView:(MAMapView *)mapView mapDidMoveByUser:(BOOL)wasUserAction;
         [Export("mapView:mapDidMoveByUser:")]
-        void MapView(MAMapView mapView, bool wasUserAction);
+        void MapViewMapDidMoveByUser(MAMapView mapView, bool wasUserAction);
 
         // @optional -(void)mapView:(MAMapView *)mapView mapWillZoomByUser:(BOOL)wasUserAction;
         [Export("mapView:mapWillZoomByUser:")]
-        void MapView(MAMapView mapView, bool wasUserAction);
+        void MapViewMapWillZoomByUser(MAMapView mapView, bool wasUserAction);
 
         // @optional -(void)mapView:(MAMapView *)mapView mapDidZoomByUser:(BOOL)wasUserAction;
         [Export("mapView:mapDidZoomByUser:")]
-        void MapView(MAMapView mapView, bool wasUserAction);
+        void MapViewMapDidZoomByUser(MAMapView mapView, bool wasUserAction);
 
         // @optional -(void)mapView:(MAMapView *)mapView didSingleTappedAtCoordinate:(CLLocationCoordinate2D)coordinate;
         [Export("mapView:didSingleTappedAtCoordinate:")]
-        void MapView(MAMapView mapView, CLLocationCoordinate2D coordinate);
+        void MapViewDidSingleTappedAtCoordinate(MAMapView mapView, CLLocationCoordinate2D coordinate);
 
         // @optional -(void)mapView:(MAMapView *)mapView didLongPressedAtCoordinate:(CLLocationCoordinate2D)coordinate;
         [Export("mapView:didLongPressedAtCoordinate:")]
-        void MapView(MAMapView mapView, CLLocationCoordinate2D coordinate);
+        void MapViewDidLongPressedAtCoordinate(MAMapView mapView, CLLocationCoordinate2D coordinate);
 
         // @optional -(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation;
         [Export("mapView:viewForAnnotation:")]
-        MAAnnotationView MapView(MAMapView mapView, MAAnnotation annotation);
+        MAAnnotationView MapViewViewForAnnotation(MAMapView mapView, MAAnnotation annotation);
 
         // @optional -(void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views;
         [Export("mapView:didAddAnnotationViews:")]
         //[Verify(StronglyTypedNSArray)]
-        void MapView(MAMapView mapView, NSObject[] views);
+        void MapViewDidAddAnnotationViews(MAMapView mapView, NSObject[] views);
 
         // @optional -(void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view;
         [Export("mapView:didSelectAnnotationView:")]
-        void MapView(MAMapView mapView, MAAnnotationView view);
+        void MapViewDidSelectAnnotationView(MAMapView mapView, MAAnnotationView view);
 
         // @optional -(void)mapView:(MAMapView *)mapView didDeselectAnnotationView:(MAAnnotationView *)view;
         [Export("mapView:didDeselectAnnotationView:")]
-        void MapView(MAMapView mapView, MAAnnotationView view);
+        void MapViewDidDeselectAnnotationView(MAMapView mapView, MAAnnotationView view);
 
         // @optional -(void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
         [Export("mapView:annotationView:calloutAccessoryControlTapped:")]
-        void MapView(MAMapView mapView, MAAnnotationView view, UIControl control);
+        void MapViewAnnotationViewCalloutAccessoryControlTapped(MAMapView mapView, MAAnnotationView view, UIControl control);
 
         // @optional -(void)mapView:(MAMapView *)mapView didAnnotationViewCalloutTapped:(MAAnnotationView *)view;
         [Export("mapView:didAnnotationViewCalloutTapped:")]
-        void MapView(MAMapView mapView, MAAnnotationView view);
+        void MapViewDidAnnotationViewCalloutTapped(MAMapView mapView, MAAnnotationView view);
 
         // @optional -(void)mapViewWillStartLocatingUser:(MAMapView *)mapView;
         [Export("mapViewWillStartLocatingUser:")]
@@ -767,46 +749,46 @@ namespace MAMapKit
 
         // @optional -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation;
         [Export("mapView:didUpdateUserLocation:updatingLocation:")]
-        void MapView(MAMapView mapView, MAUserLocation userLocation, bool updatingLocation);
+        void MapViewDidUpdateUserLocationUpdatingLocation(MAMapView mapView, MAUserLocation userLocation, bool updatingLocation);
 
         // @optional -(void)mapView:(MAMapView *)mapView didFailToLocateUserWithError:(NSError *)error;
         [Export("mapView:didFailToLocateUserWithError:")]
-        void MapView(MAMapView mapView, NSError error);
+        void MapViewDidFailToLocateUserWithError(MAMapView mapView, NSError error);
 
         // @optional -(void)mapView:(MAMapView *)mapView didChangeUserTrackingMode:(MAUserTrackingMode)mode animated:(BOOL)animated;
         [Export("mapView:didChangeUserTrackingMode:animated:")]
-        void MapView(MAMapView mapView, MAUserTrackingMode mode, bool animated);
+        void MapViewDidChangeUserTrackingModeAnimated(MAMapView mapView, MAUserTrackingMode mode, bool animated);
 
         // @optional -(void)mapView:(MAMapView *)mapView annotationView:(MAAnnotationView *)view didChangeDragState:(MAAnnotationViewDragState)newState fromOldState:(MAAnnotationViewDragState)oldState;
         [Export("mapView:annotationView:didChangeDragState:fromOldState:")]
-        void MapView(MAMapView mapView, MAAnnotationView view, MAAnnotationViewDragState newState, MAAnnotationViewDragState oldState);
+        void MapViewAnnotationViewDidChangeDragStateFromOldState(MAMapView mapView, MAAnnotationView view, MAAnnotationViewDragState newState, MAAnnotationViewDragState oldState);
 
         // @optional -(MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id<MAOverlay>)overlay;
         [Export("mapView:rendererForOverlay:")]
-        MAOverlayRenderer MapView(MAMapView mapView, MAOverlay overlay);
+        MAOverlayRenderer MapViewRendererForOverlay(MAMapView mapView, MAOverlay overlay);
 
         // @optional -(void)mapView:(MAMapView *)mapView didAddOverlayRenderers:(NSArray *)renderers;
         [Export("mapView:didAddOverlayRenderers:")]
         //[Verify(StronglyTypedNSArray)]
-        void MapView(MAMapView mapView, NSObject[] renderers);
+        void MapViewDidAddOverlayRenderers(MAMapView mapView, NSObject[] renderers);
 
         // @optional -(MAOverlayView *)mapView:(MAMapView *)mapView viewForOverlay:(id<MAOverlay>)overlay __attribute__((deprecated("use - (MAOverlayRenderer *)mapView:(MAMapView *)mapView rendererForOverlay:(id <MAOverlay>)overlay instead")));
         [Export("mapView:viewForOverlay:")]
-        MAOverlayView MapView(MAMapView mapView, MAOverlay overlay);
+        MAOverlayView MapViewViewForOverlay(MAMapView mapView, MAOverlay overlay);
 
         // @optional -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation __attribute__((deprecated("use -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation instead")));
         [Export("mapView:didUpdateUserLocation:")]
-        void MapView(MAMapView mapView, MAUserLocation userLocation);
+        void MapViewDidUpdateUserLocation(MAMapView mapView, MAUserLocation userLocation);
 
         // @optional -(void)mapView:(MAMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews __attribute__((deprecated("use - (void)mapView:(MAMapView *)mapView didAddOverlayRenderers:(NSArray *)renderers instead")));
         [Export("mapView:didAddOverlayViews:")]
         //[Verify(StronglyTypedNSArray)]
-        void MapView(MAMapView mapView, NSObject[] overlayViews);
+        void MapViewDidAddOverlayViews(MAMapView mapView, NSObject[] overlayViews);
     }
 
     // @interface MAShape : NSObject <MAAnnotation>
     [BaseType(typeof(NSObject))]
-    interface MAShape : IMAAnnotation
+    interface MAShape : MAAnnotation
     {
         // @property (copy, nonatomic) NSString * title;
         [Export("title")]
@@ -849,7 +831,7 @@ namespace MAMapKit
 
     // @interface MAUserLocation : NSObject <MAAnnotation>
     [BaseType(typeof(NSObject))]
-    interface MAUserLocation : IMAAnnotation
+    interface MAUserLocation : MAAnnotation
     {
         // @property (readonly, getter = isUpdating, nonatomic) BOOL updating;
         [Export("updating")]
@@ -962,7 +944,7 @@ namespace MAMapKit
 
         // @property CGPathRef path;
         [Export("path", ArgumentSemantic.Assign)]
-        unsafe CGPathRef Path { get; set; }
+        unsafe CGPath Path { get; set; }
 
         // -(void)createPath;
         [Export("createPath")]
@@ -974,24 +956,24 @@ namespace MAMapKit
 
         // -(void)applyStrokePropertiesToContext:(CGContextRef)context atZoomScale:(MAZoomScale)zoomScale;
         [Export("applyStrokePropertiesToContext:atZoomScale:")]
-        unsafe void ApplyStrokePropertiesToContext(CGContextRef context, double zoomScale);
+        unsafe void ApplyStrokePropertiesToContext(CGContext context, double zoomScale);
 
         // -(void)applyFillPropertiesToContext:(CGContextRef)context atZoomScale:(MAZoomScale)zoomScale;
         [Export("applyFillPropertiesToContext:atZoomScale:")]
-        unsafe void ApplyFillPropertiesToContext(CGContextRef context, double zoomScale);
+        unsafe void ApplyFillPropertiesToContext(CGContext context, double zoomScale);
 
         // -(void)strokePath:(CGPathRef)path inContext:(CGContextRef)context;
         [Export("strokePath:inContext:")]
-        unsafe void StrokePath(CGPathRef path, CGContextRef context);
+        unsafe void StrokePath(CGPath path, CGContext context);
 
         // -(void)fillPath:(CGPathRef)path inContext:(CGContextRef)context;
         [Export("fillPath:inContext:")]
-        unsafe void FillPath(CGPathRef path, CGContextRef context);
+        unsafe void FillPath(CGPath path, CGContext context);
     }
 
     // @interface MACircle : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MACircle : IMAOverlay
+    interface MACircle : MAOverlay
     {
         // @property (readonly, nonatomic) CLLocationCoordinate2D coordinate;
         [Export("coordinate")]
@@ -1031,7 +1013,7 @@ namespace MAMapKit
 
     // @interface MAPolyline : MAMultiPoint <MAOverlay>
     [BaseType(typeof(MAMultiPoint))]
-    interface MAPolyline : IMAOverlay
+    interface MAPolyline : MAOverlay
     {
         // +(instancetype)polylineWithPoints:(MAMapPoint *)points count:(NSUInteger)count;
         [Static]
@@ -1118,7 +1100,7 @@ namespace MAMapKit
 
     // @interface MAPolygon : MAMultiPoint <MAOverlay>
     [BaseType(typeof(MAMultiPoint))]
-    interface MAPolygon : IMAOverlay
+    interface MAPolygon : MAOverlay
     {
         // @property (readonly) NSArray * interiorPolygons;
         [Export("interiorPolygons")]
@@ -1139,7 +1121,7 @@ namespace MAMapKit
         // +(instancetype)polygonWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count;
         [Static]
         [Export("polygonWithCoordinates:count:")]
-        unsafe MAPolygon PolygonWithCoordinates(CLLocationCoordinate2D* coords, nuint count);
+        unsafe MAPolygon PolygonWithCoordinates(CLLocationCoordinate2D coords, nuint count);
 
         // +(instancetype)polygonWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count interiorPolygons:(NSArray *)interiorPolygons;
         [Static]
@@ -1163,7 +1145,7 @@ namespace MAMapKit
 
     // @interface MAGroundOverlay : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MAGroundOverlay : IMAOverlay
+    interface MAGroundOverlay : MAOverlay
     {
         // @property (readonly, nonatomic) UIImage * icon;
         [Export("icon")]
@@ -1203,7 +1185,7 @@ namespace MAMapKit
 
     // @interface MATileOverlay : NSObject <MAOverlay>
     [BaseType(typeof(NSObject))]
-    interface MATileOverlay : IMAOverlay
+    interface MATileOverlay : MAOverlay
     {
         // -(instancetype)initWithURLTemplate:(NSString *)URLTemplate;
         [Export("initWithURLTemplate:")]
@@ -1367,7 +1349,7 @@ namespace MAMapKit
 
         // @property CGPathRef path;
         [Export("path", ArgumentSemantic.Assign)]
-        unsafe CGPathRef Path { get; set; }
+        unsafe CGPath Path { get; set; }
 
         // -(void)invalidatePath;
         [Export("invalidatePath")]
@@ -1375,19 +1357,19 @@ namespace MAMapKit
 
         // -(void)applyStrokePropertiesToContext:(CGContextRef)context atZoomScale:(MAZoomScale)zoomScale;
         [Export("applyStrokePropertiesToContext:atZoomScale:")]
-        unsafe void ApplyStrokePropertiesToContext(CGContextRef context, double zoomScale);
+        unsafe void ApplyStrokePropertiesToContext(CGContext context, double zoomScale);
 
         // -(void)applyFillPropertiesToContext:(CGContextRef)context atZoomScale:(MAZoomScale)zoomScale;
         [Export("applyFillPropertiesToContext:atZoomScale:")]
-        unsafe void ApplyFillPropertiesToContext(CGContextRef context, double zoomScale);
+        unsafe void ApplyFillPropertiesToContext(CGContext context, double zoomScale);
 
         // -(void)strokePath:(CGPathRef)path inContext:(CGContextRef)context;
         [Export("strokePath:inContext:")]
-        unsafe void StrokePath(CGPathRef path, CGContextRef context);
+        unsafe void StrokePath(CGPath path, CGContext context);
 
         // -(void)fillPath:(CGPathRef)path inContext:(CGContextRef)context;
         [Export("fillPath:inContext:")]
-        unsafe void FillPath(CGPathRef path, CGContextRef context);
+        unsafe void FillPath(CGPath path, CGContext context);
     }
 
     // @interface MACircleView : MAOverlayPathView

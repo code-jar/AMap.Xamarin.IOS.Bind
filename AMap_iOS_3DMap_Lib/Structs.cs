@@ -55,6 +55,9 @@ namespace MAMapKit
         public MAMapSize size;
     }
 
+    // typedef void (^AMapTileProjectionBlock)(int, int, int, int, int, int);
+    delegate void AMapTileProjectionBlock(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
+
     static class CFunctions
     {
         // MACoordinateBounds MACoordinateBoundsMake (CLLocationCoordinate2D northEast, CLLocationCoordinate2D southWest);
@@ -344,6 +347,13 @@ namespace MAMapKit
     }
 
     [Native]
+    public enum MAMapLanguage : long
+    {
+        ZhCN = 0,
+        En = 1,
+    }
+
+    [Native]
     public enum MAMapType : long
     {
         Standard = 0,
@@ -417,10 +427,10 @@ namespace MAMapKit
 
     public enum MAOfflineCityStatus : long
     {
-        None = MAOfflineItemStatusNone,
-        Cached = MAOfflineItemStatusCached,
-        Installed = MAOfflineItemStatusInstalled,
-        Expired = MAOfflineItemStatusExpired
+        None = MAOfflineItemStatus.None,
+        Cached = MAOfflineItemStatus.Cached,
+        Installed = MAOfflineItemStatus.Installed,
+        Expired = MAOfflineItemStatus.Expired
     }
 
     [Native]

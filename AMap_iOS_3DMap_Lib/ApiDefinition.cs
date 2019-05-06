@@ -478,7 +478,7 @@ namespace MAMapKit
 
     // @interface MACircle : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MACircle : IMAOverlay
+    interface MACircle : MAOverlay
     {
         // @property (nonatomic, strong) NSArray<id<MAOverlay>> * hollowShapes;
         [Export("hollowShapes", ArgumentSemantic.Strong)]
@@ -1579,7 +1579,7 @@ namespace MAMapKit
 
     // @interface MAArc : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MAArc : IMAOverlay
+    interface MAArc : MAOverlay
     {
         // @property (assign, nonatomic) CLLocationCoordinate2D startCoordinate;
         [Export("startCoordinate", ArgumentSemantic.Assign)]
@@ -1639,7 +1639,7 @@ namespace MAMapKit
 
     // @interface MAPolygon : MAMultiPoint <MAOverlay>
     [BaseType(typeof(MAMultiPoint))]
-    interface MAPolygon : IMAOverlay
+    interface MAPolygon : MAOverlay
     {
         // @property (nonatomic, strong) NSArray<id<MAOverlay>> * hollowShapes;
         [Export("hollowShapes", ArgumentSemantic.Strong)]
@@ -1679,25 +1679,25 @@ namespace MAMapKit
 
     // @interface MAPolyline : MAMultiPoint <MAOverlay>
     [BaseType(typeof(MAMultiPoint))]
-    interface MAPolyline : IMAOverlay
+    interface MAPolyline : MAOverlay
     {
         // +(instancetype)polylineWithPoints:(MAMapPoint *)points count:(NSUInteger)count;
         [Static]
         [Export("polylineWithPoints:count:")]
-        unsafe MAPolyline PolylineWithPoints(MAMapPoint* points, nuint count);
+        unsafe MAPolyline PolylineWithPoints(MAMapPoint points, nuint count);
 
         // +(instancetype)polylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count;
         [Static]
         [Export("polylineWithCoordinates:count:")]
-        unsafe MAPolyline PolylineWithCoordinates(CLLocationCoordinate2D* coords, nuint count);
+        unsafe MAPolyline PolylineWithCoordinates(CLLocationCoordinate2D coords, nuint count);
 
         // -(BOOL)setPolylineWithPoints:(MAMapPoint *)points count:(NSInteger)count;
         [Export("setPolylineWithPoints:count:")]
-        unsafe bool SetPolylineWithPoints(MAMapPoint* points, nint count);
+        unsafe bool SetPolylineWithPoints(MAMapPoint points, nint count);
 
         // -(BOOL)setPolylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSInteger)count;
         [Export("setPolylineWithCoordinates:count:")]
-        unsafe bool SetPolylineWithCoordinates(CLLocationCoordinate2D* coords, nint count);
+        unsafe bool SetPolylineWithCoordinates(CLLocationCoordinate2D coords, nint count);
     }
 
     // @interface MAPolylineRenderer : MAOverlayPathRenderer
@@ -1728,20 +1728,20 @@ namespace MAMapKit
         // +(instancetype)polylineWithPoints:(MAMapPoint *)points count:(NSUInteger)count;
         [Static]
         [Export("polylineWithPoints:count:")]
-        unsafe MAGeodesicPolyline PolylineWithPoints(MAMapPoint* points, nuint count);
+        unsafe MAGeodesicPolyline PolylineWithPoints(MAMapPoint points, nuint count);
 
         // +(instancetype)polylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count;
         [Static]
         [Export("polylineWithCoordinates:count:")]
-        unsafe MAGeodesicPolyline PolylineWithCoordinates(CLLocationCoordinate2D* coords, nuint count);
+        unsafe MAGeodesicPolyline PolylineWithCoordinates(CLLocationCoordinate2D coords, nuint count);
 
         // -(BOOL)setPolylineWithPoints:(MAMapPoint *)points count:(NSInteger)count;
         [Export("setPolylineWithPoints:count:")]
-        unsafe bool SetPolylineWithPoints(MAMapPoint* points, nint count);
+        unsafe bool SetPolylineWithPoints(MAMapPoint points, nint count);
 
         // -(BOOL)setPolylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSInteger)count;
         [Export("setPolylineWithCoordinates:count:")]
-        unsafe bool SetPolylineWithCoordinates(CLLocationCoordinate2D* coords, nint count);
+        unsafe bool SetPolylineWithCoordinates(CLLocationCoordinate2D coords, nint count);
     }
 
     // @interface MAMultiPolyline : MAPolyline
@@ -1755,20 +1755,20 @@ namespace MAMapKit
         // +(instancetype)polylineWithPoints:(MAMapPoint *)points count:(NSUInteger)count drawStyleIndexes:(NSArray<NSNumber *> *)drawStyleIndexes;
         [Static]
         [Export("polylineWithPoints:count:drawStyleIndexes:")]
-        unsafe MAMultiPolyline PolylineWithPoints(MAMapPoint* points, nuint count, NSNumber[] drawStyleIndexes);
+        unsafe MAMultiPolyline PolylineWithPoints(MAMapPoint points, nuint count, NSNumber[] drawStyleIndexes);
 
         // +(instancetype)polylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count drawStyleIndexes:(NSArray<NSNumber *> *)drawStyleIndexes;
         [Static]
         [Export("polylineWithCoordinates:count:drawStyleIndexes:")]
-        unsafe MAMultiPolyline PolylineWithCoordinates(CLLocationCoordinate2D* coords, nuint count, NSNumber[] drawStyleIndexes);
+        unsafe MAMultiPolyline PolylineWithCoordinates(CLLocationCoordinate2D coords, nuint count, NSNumber[] drawStyleIndexes);
 
         // -(BOOL)setPolylineWithPoints:(MAMapPoint *)points count:(NSUInteger)count drawStyleIndexes:(NSArray<NSNumber *> *)drawStyleIndexes;
         [Export("setPolylineWithPoints:count:drawStyleIndexes:")]
-        unsafe bool SetPolylineWithPoints(MAMapPoint* points, nuint count, NSNumber[] drawStyleIndexes);
+        unsafe bool SetPolylineWithPoints(MAMapPoint points, nuint count, NSNumber[] drawStyleIndexes);
 
         // -(BOOL)setPolylineWithCoordinates:(CLLocationCoordinate2D *)coords count:(NSUInteger)count drawStyleIndexes:(NSArray<NSNumber *> *)drawStyleIndexes;
         [Export("setPolylineWithCoordinates:count:drawStyleIndexes:")]
-        unsafe bool SetPolylineWithCoordinates(CLLocationCoordinate2D* coords, nuint count, NSNumber[] drawStyleIndexes);
+        unsafe bool SetPolylineWithCoordinates(CLLocationCoordinate2D coords, nuint count, NSNumber[] drawStyleIndexes);
     }
 
     // @interface MAMultiTexturePolylineRenderer : MAPolylineRenderer
@@ -1821,7 +1821,7 @@ namespace MAMapKit
 
     // @interface MAGroundOverlay : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MAGroundOverlay : IMAOverlay
+    interface MAGroundOverlay : MAOverlay
     {
         // @property (readonly, nonatomic) UIImage * icon;
         [Export("icon")]
@@ -1873,7 +1873,7 @@ namespace MAMapKit
 
     // @interface MATileOverlay : NSObject <MAOverlay>
     [BaseType(typeof(NSObject))]
-    interface MATileOverlay : IMAOverlay
+    interface MATileOverlay : MAOverlay
     {
         // @property (assign, nonatomic) CGSize tileSize;
         [Export("tileSize", ArgumentSemantic.Assign)]
@@ -1979,7 +1979,7 @@ namespace MAMapKit
 
     // @interface MACustomBuildingOverlay : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MACustomBuildingOverlay : IMAOverlay
+    interface MACustomBuildingOverlay : MAOverlay
     {
         // @property (readonly, nonatomic) MACustomBuildingOverlayOption * defaultOption;
         [Export("defaultOption")]
@@ -2247,7 +2247,7 @@ namespace MAMapKit
 
     // @interface MAParticleOverlay : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MAParticleOverlay : IMAOverlay
+    interface MAParticleOverlay : MAOverlay
     {
         // +(instancetype)particleOverlayWithOption:(MAParticleOverlayOptions *)option;
         [Static]
@@ -2299,7 +2299,7 @@ namespace MAMapKit
 
     // @interface MAMultiPointOverlay : MAShape <MAOverlay>
     [BaseType(typeof(MAShape))]
-    interface MAMultiPointOverlay : IMAOverlay
+    interface MAMultiPointOverlay : MAOverlay
     {
         // @property (readonly, nonatomic) NSArray<MAMultiPointItem *> * items;
         [Export("items")]

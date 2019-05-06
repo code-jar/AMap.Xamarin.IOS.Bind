@@ -2513,6 +2513,14 @@ namespace AMapSearchKit
         // extern NSString *const AMapSearchErrorDomain;
         [Field("AMapSearchErrorDomain", "__Internal")]
         NSString AMapSearchErrorDomain { get; }
+
+        // extern NSString *const AMapSearchVersion;
+        [Field("AMapSearchVersion", "__Internal")]
+        NSString AMapSearchVersion { get; }
+
+        // extern NSString *const AMapSearchName;
+        [Field("AMapSearchName", "__Internal")]
+        NSString AMapSearchName { get; }
     }
 
     // @interface AMapNearbyUploadInfo : NSObject <NSCopying>
@@ -2592,16 +2600,16 @@ namespace AMapSearchKit
         bool ClearUserInfoWithID(string userID);
     }
 
-    [Static]
-    //[Verify(ConstantsInterfaceAssociation)]
-    partial interface Constants
-    {
-        // extern NSString *const AMapSearchVersion;
-        [Field("AMapSearchVersion", "__Internal")]
-        NSString AMapSearchVersion { get; }
+    //[Static]
+    ////[Verify(ConstantsInterfaceAssociation)]
+    //partial interface Constants
+    //{
+    //    // extern NSString *const AMapSearchVersion;
+    //    [Field("AMapSearchVersion", "__Internal")]
+    //    NSString AMapSearchVersion { get; }
 
-        // extern NSString *const AMapSearchName;
-        [Field("AMapSearchName", "__Internal")]
-        NSString AMapSearchName { get; }
-    }
+    //    // extern NSString *const AMapSearchName;
+    //    [Field("AMapSearchName", "__Internal")]
+    //    NSString AMapSearchName { get; }
+    //}
 }
